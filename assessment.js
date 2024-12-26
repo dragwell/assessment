@@ -57,9 +57,9 @@ assessmentButton.addEventListener('click', ()=>{
     tweetDiv.appendChild(script);
 });
 
-userNameInput.addEventListener('keydown', (e)=>{
-    if(e.code === 'Enter') assessmentButton.click();
-});
+// userNameInput.addEventListener('keydown', (e)=>{
+//     if(e.code === 'Enter') assessmentButton.click();
+// });
 
 const answers = [
   '###userName###のいいところは声です。###userName###の特徴的な声は皆を惹きつけ、心に残ります。',
