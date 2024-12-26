@@ -34,14 +34,22 @@ assessmentButton.addEventListener('click', ()=>{
     if (userName.length === 0)return;
     
     resultDiv.replaceChildren();
-    const heading = document.createElement('h3');
-    heading.innerText = '診断結果';
-    resultDiv.appendChild(heading);
+    const cardheaderDiv = document.createElement('div');
+    cardheaderDiv.innerText = '診断結果';
+    cardheaderDiv.classList.add('card-header','text-bg-primary');
+    resultDiv.appendChild(cardheaderDiv);
 
+    const cardbodyDiv = document.createElement('div');
+    cardbodyDiv.classList.add('card-body');
+    resultDiv.appendChild(cardbodyDiv);
+    
     const p = document.createElement('p');
     const result = assessment(userName);
     p.innerText = result;
-    resultDiv.appendChild(p);
+    p.classList.add('card-text');
+    cardbodyDiv.appendChild(p);
+
+    resultDiv.classList.add('card');
 
     tweetDiv.replaceChildren();
     const [anchor, script] = createTweetBtn(result);
